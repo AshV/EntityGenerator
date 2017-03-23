@@ -24,8 +24,8 @@ namespace EntityGenerator
                 // Set extended properties
                 OptionSet = new BooleanOptionSetMetadata
                 {
-                    TrueOption = new OptionMetadata(new Label(trueLabel, 1), 1),
-                    FalseOption = new OptionMetadata(new Label(falseLabel, 1), 0)
+                    TrueOption = new OptionMetadata(new Label(trueLabel, labelLanguage), 1),
+                    FalseOption = new OptionMetadata(new Label(falseLabel, labelLanguage), 0)
                 }
             };
                         

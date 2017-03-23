@@ -50,6 +50,7 @@
     <Compile Include="IntegerHandler.cs" />
     <Compile Include="MemoHandler.cs" />
     <Compile Include="MoneyHandler.cs" />
+    <Compile Include="PicklistHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringHandler.cs" />
   </ItemGroup>
