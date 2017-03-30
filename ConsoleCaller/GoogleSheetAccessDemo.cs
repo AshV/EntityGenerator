@@ -1,5 +1,4 @@
-﻿
-using Google.Apis.Auth.OAuth2;
+﻿using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
 using Google.Apis.Sheets.v4;
 using Google.Apis.Sheets.v4.Data;
@@ -9,7 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 
-namespace ConsoleCaller
+namespace AccessGoogleSheets
 {
     class GoogleSheetAccessDemo
     {
@@ -71,8 +70,6 @@ namespace ConsoleCaller
                 Console.WriteLine("No data found.");
             }
             Console.Read();
-
-
         }
     }
 }
