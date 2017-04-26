@@ -14,7 +14,7 @@ namespace AccessGoogleSheets
     {
         // If modifying these scopes, delete your previously saved credentials
         // at ~/.credentials/sheets.googleapis.com-dotnet-quickstart.json
-        static string[] Scopes = { SheetsService.Scope.SpreadsheetsReadonly };
+        static string[] Scopes = { "" };// { SheetsService.Scope.SpreadsheetsReadonly };
         static string ApplicationName = "Google Sheets API .NET Quickstart";
 
         static void Main(string[] args)
@@ -26,8 +26,7 @@ namespace AccessGoogleSheets
             using (var stream =
                 new FileStream("client_secret.json", FileMode.Open, FileAccess.Read))
             {
-                string credPath = System.Environment.GetFolderPath(
-                    System.Environment.SpecialFolder.Personal);
+                string credPath = System.Environment.CurrentDirectory;
                 credPath = Path.Combine(credPath, ".credentials/sheets.googleapis.com-dotnet-quickstart.json");
 
                 credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
@@ -47,14 +46,17 @@ namespace AccessGoogleSheets
             });
 
             // Define request parameters.
-            String spreadsheetId = "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms";
-            String range = "Class Data!A2:E";
-            SpreadsheetsResource.ValuesResource.GetRequest request =
+            String spreadsheetId = "1qkoAwuClLbt59Feq5KZrJpql6JqbTzliVv7lqqqAVW0"; // "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms";
+            String range = "Class Data!A2:F";
+            //    SpreadsheetsResource.ValuesResource.GetRequest 
+            var request =
                     service.Spreadsheets.Values.Get(spreadsheetId, range);
-
+      
             // Prints the names and majors of students in a sample spreadsheet:
             // https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
-            ValueRange response = request.Execute();
+            var response = request.Execute();
+         
+
             IList<IList<Object>> values = response.Values;
             if (values != null && values.Count > 0)
             {
@@ -62,7 +64,7 @@ namespace AccessGoogleSheets
                 foreach (var row in values)
                 {
                     // Print columns A and E, which correspond to indices 0 and 4.
-                    Console.WriteLine("{0}, {1}", row[0], row[4]);
+                    Console.WriteLine("{0}, {1}", row[0], row[3]);
                 }
             }
             else

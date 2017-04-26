@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>ConsoleCaller.GoogleSheets</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Google.Apis, Version=1.22.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.1.22.0\lib\net45\Google.Apis.dll</HintPath>
@@ -73,7 +76,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GoogleSheetAccessDemo.cs" />
+    <Compile Include="ClassFunc.cs" />
+    <Compile Include="GoogleSheetAccessingSheetNames.cs" />
+    <Compile Include="GoogleSheets.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
